@@ -298,10 +298,10 @@ public class UserHandler {
                                 attributeNames.put("#email", "email");
                                 attributeValues.put(":username", new AttributeValue(request.getUsername()));
                                 attributeValues.put(":email", new AttributeValue(request.getEmail()));
-                                dynamoDBScanExpression.withFilterExpression("(#username = :username　OR contains(#username,:username)) AND (#email = :email OR contains(#email,:email))")
+                                dynamoDBScanExpression.withFilterExpression("(#username = :username OR contains(#username,:username)) AND (#email = :email OR contains(#email,:email))")
                                         .withExpressionAttributeNames(attributeNames)
                                         .withExpressionAttributeValues(attributeValues);
-                                    break;
+                                break;
                             case "namebd":
                                 if(attributeNames.size() > 0){
                                     attributeNames.clear();
